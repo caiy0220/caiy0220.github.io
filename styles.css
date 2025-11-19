@@ -1,0 +1,798 @@
+:root {
+  --bg: #f7f7fb;
+  --bg-alt: #ffffff;
+  --text: #1f2933;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-soft: rgba(37, 99, 235, 0.1);
+  --border: #e5e7eb;
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.12);
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --max-width: 960px;
+}
+
+[data-theme="dark"] {
+  --bg: #1f2738;
+  --bg-alt: #0b1220;
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.2);
+  --border: #1f2937;
+  --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.65);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at top left, #dbeafe 0, var(--bg) 36%, var(--bg) 100%);
+  background-size: 140% 140%;
+  background-repeat: no-repeat;
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-theme="dark"] body {
+  background-color: var(--bg);
+  background-image: radial-gradient(circle at top left, #2f3d55 0, var(--bg) 36%, var(--bg) 100%);
+  background-size: 140% 140%;
+  background-repeat: no-repeat;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--bg) 85%, transparent),
+    color-mix(in srgb, var(--bg) 96%, transparent)
+  );
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  gap: 1.5rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.site-title {
+  font-weight: 650;
+  letter-spacing: 0.02em;
+  font-size: 1.1rem;
+  white-space: nowrap;
+}
+
+/* Logo styling */
+.logo-link {
+  display: flex;
+  align-items: center;
+  margin-right: 0.6rem;
+}
+
+.logo-img {
+  height: 26px;      /* or whatever height your SVG looks best at */
+  width: auto;
+  display: block;
+}
+
+.site-tagline {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  padding: 0.3rem 0.1rem;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+  border-bottom-color: var(--accent-soft);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+  background: color-mix(in srgb, var(--bg-alt) 90%, transparent);
+  padding: 0.35rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.08s ease;
+}
+
+#theme-toggle:hover {
+  background: color-mix(in srgb, var(--bg-alt) 100%, transparent);
+  border-color: var(--accent-soft);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+}
+
+#theme-toggle:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+#theme-toggle span.icon {
+  font-size: 1.05rem;
+}
+
+main {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 2.75fr) ;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hero-card,
+.profile-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Keep inner content spacing nicely */
+.hero-inner {
+  padding-right: 2rem;       /* optional; gives some space before the profile column */
+}
+
+.hero-name {
+  font-size: 1.8rem;
+  font-weight: 750;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.hero-title {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+
+.hero-summary {
+  font-size: 0.98rem;
+  color: var(--text);
+  margin-bottom: 1.0rem;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero-tag {
+  font-size: 0.8rem;
+  border-radius: 999px;
+  /* border: 1px solid color-mix(in srgb, var(--accent-soft) 80%, transparent);
+  */
+  background: color-mix(in srgb, var(--bg-alt) 90%, transparent); 
+  color: var(--text-muted);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.btn-primary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.08s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+  background: color-mix(in srgb, var(--accent) 90%, #ffffff 10%);
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(1px) scale(0.99);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.32);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: color-mix(in srgb, var(--border) 75%, transparent);
+  color: var(--text-muted);
+}
+
+.btn-ghost:hover {
+  background: color-mix(in srgb, var(--bg-alt) 90%, transparent);
+  border-color: var(--accent-soft);
+  text-decoration: none;
+}
+
+/* Portrait / side card */
+.hero-aside {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;    
+  margin: 0 auto 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* makes sure your face is centered nicely */
+  display: block;
+}
+
+[data-theme="dark"] .profile-photo {
+  background: linear-gradient(135deg, #1f2937, #111827);
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 0.15rem;
+}
+
+.profile-role {
+  font-size: 1.0rem;
+  color: var(--text-muted);
+  margin-bottom: 0.7rem;
+}
+
+.profile-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.profile-links a {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 96%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.profile-links a:hover {
+  border-color: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Section blocks */
+section {
+  background: color-mix(in srgb, var(--bg-alt) 98%, transparent);
+  border-radius: var(--radius-lg);
+  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+  padding: 1.6rem 1.5rem 1.5rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+section + section {
+  margin-top: 0.75rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+}
+
+.section-body p + p {
+  margin-top: 0.7rem;
+}
+
+.section-note {
+  margin-top: 0.0rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.section-note a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.section-note a:hover {
+  text-decoration: underline;
+}
+
+.item {
+  display: grid;
+  font-size: 0.95rem;
+  /* padding: 0.75rem 1rem 0.75rem 1.25rem; */
+  /* padding: 0 0 1.8rem 0; */
+  padding: 0 0 0 0; 
+}
+
+.item-title {
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.item-meta {
+  font-size: 0.85rem;
+  margin-bottom: 0.15rem;
+}
+
+.item-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.55rem;
+}
+
+/* Timeline layout -- for experience */
+.timeline {
+  position: relative;
+  margin-top: 0.5rem;
+  padding-left: 4.1rem;   /* space for line + bullets */
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  --timeline-axis: 0.7rem;      /* horizontal position of the timeline axis */
+}
+
+/* Each entry */
+.timeline-item {
+  position: relative;
+  /* padding-left: 0.4rem; */
+  padding: 0.75rem 1rem 0.75rem 1.25rem;
+  background: linear-gradient(-135deg,
+    color-mix(in srgb, var(--bg-alt) 96%, transparent),
+    color-mix(in srgb, var(--accent-soft) 90%, var(--bg-alt) 10%)
+  );
+  box-shadow: var(--shadow-soft);
+  border-radius: 0.9rem;
+  border: 2px solid color-mix(in srgb, var(--border) 80%, transparent);
+}
+
+/* Current status */
+.timeline-item-current {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--border) 50%);
+  background: linear-gradient(-135deg,
+    color-mix(in srgb, var(--bg-alt) 96%, transparent),
+    color-mix(in srgb, var(--accent-soft) 90%, var(--bg-alt) 10%)
+  );
+}
+
+/* Circle bullets (○ / ● effect) */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  /* bullet size */
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  
+  /* location */
+  left: calc(var(--timeline-axis) - 3.85rem - 9px);
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: 2px solid color-mix(in srgb, var(--accent) 85%, var(--border) 15%);
+  background: var(--bg);   
+}
+
+/* Current role: filled circle */
+.timeline-item-current::before {
+  background: color-mix(in srgb, var(--accent) 85%, var(--border) 15%);
+}
+
+/* Connector line segment BELOW each bullet */
+.timeline-item::after {
+  content: "";
+  position: absolute;
+
+  /* this should sit under the center of the bullet */
+  left: calc(var(--timeline-axis) - 3.85rem );
+
+  top: calc(50% + 1.2rem);        /* start from bullet center */
+  width: 1px;
+  height: calc(100% - 1.0rem);  /* through this item + gap to next */
+  background: color-mix(in srgb, var(--accent) 85%, var(--border) 15%);
+  /* background: color-mix(in srgb, var(--border) 85%, transparent); */
+}
+
+/* No connector after the last item */
+.timeline-item:last-child::after {
+  display: none;
+}
+
+/* Text styling */
+.timeline-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 0.5fr) minmax(0, 4.0fr); /* or tweak ratio */
+  column-gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.15rem;
+}
+
+/* Logo cell: keep logo compact */
+.timeline-logo-cell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.timeline-logo {
+  width: auto;     /* adjust as needed */
+  height: 64px;
+  display: block;
+  flex-shrink: 0;
+  border-radius: 0.25rem;  /* optional: soften edges */
+}
+
+/* Text cell: normal timeline text styling */
+.timeline-text-cell {
+  min-width: 0;    /* allows text to wrap nicely in grid layouts */
+}
+
+.timeline-role {
+  font-weight: 550;
+  font-size: 0.98rem;
+}
+
+.timeline-place {
+  font-size: 0.98rem;
+  font-weight: 300;
+}
+
+.timeline-date {
+  font-size: 0.98rem;
+  font-weight: 300;
+}
+
+.timeline-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+/* Optional: tighter on small screens */
+@media (max-width: 600px) {
+  .timeline {
+    padding-left: 1.4rem;
+    gap: 1.0rem;
+  }
+
+  .timeline-role {
+    font-size: 0.95rem;
+  }
+}
+
+/* Two-column layout for paper entry, description + illustration */
+.two-column {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.1rem 0.7rem;
+  margin-top: 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* One paper entry */
+.paper-entry {
+  padding: 0 0 1.8rem 0;     /* extra breathing room inside */
+  margin-top: 1.2rem;
+  margin-bottom: 1.8rem;     /* space between entries */
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+}
+
+/* Remove the border after the last entry */
+.paper-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* LEFT column: text */
+.paper-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Meta / title / description reuse your item styles */
+.paper-main .item-meta {
+  font-size: 0.85rem;
+}
+
+.paper-main .item-title {
+  font-weight: 550;
+  font-size: 1.0rem;
+}
+
+.paper-main .item-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Links under each paper */
+.paper-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.paper-links a {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--border) 50%); 
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.paper-links a:hover {
+  color: var(--accent);
+  background-color: var(--accent-soft);
+}
+
+.paper-screenshot {
+  border-radius: 0.9rem;
+  overflow: hidden;
+  align-self: center;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--bg-alt) 92%, transparent);
+  padding: 0.4rem;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
+}
+
+.paper-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+/* Projects */
+.project-row {
+  display: grid;
+  grid-template-columns: minmax(0, 4.0fr) minmax(0, 0.5fr); /* or tweak ratio */
+  column-gap: 0.55rem;
+  align-items: flex-start;
+  /* margin-bottom: 0.15rem; */
+  padding: 0 0 1.8rem 0;     /* extra breathing room inside */
+  margin-top: 1.2rem;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+}
+
+/* Remove the border after the last entry */
+.project-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Logo */
+.project-row-logo {
+  height: auto;
+  width: 100%;
+  margin-top: 1rem;
+  object-fit: contain;
+}
+
+.project-item {
+  display: grid;
+  font-size: 0.95rem;
+  padding: 0 0 0 0; 
+  grid-column: 1/2;
+}
+
+.project-row:not(:has(.project-row-logo)) .project-item {
+  grid-column: 1 / -1;
+}
+
+/* Contact */
+.contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+.contact-item-label {
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto 1.5rem;
+  padding: 0 1.25rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+  }
+
+  .site-tagline {
+    display: none;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-aside {
+    order: -1;
+  }
+
+  main {
+    padding-top: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 1.4rem 1.25rem 1.3rem;
+  }
+}
+
+/* In light mode: use the original dark logo (no filter) */
+html[data-theme="light"] .img-dark {
+  filter: invert(1);
+}
+
+/* In dark mode: invert it so it becomes light on dark background */
+html[data-theme="dark"] .img-dark {
+  filter: none;
+}
+
+html[data-theme="light"] .logo-auto {
+  filter: none;
+}
+
+/* Dark mode: invert and slightly tweak brightness/contrast */
+html[data-theme="dark"] .logo-auto {
+  filter: invert(1) brightness(1.05) contrast(1.05);
+}

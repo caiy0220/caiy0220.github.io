@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Load font FIRST -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Theme & small JS logic -->
+  <script src="theme.js" defer></script>
+
+  <!-- Tab info -->
+  <link rel="icon" type="image/svg" href="img/mylogo_light.svg">
+  <title>Yi Cai – Personal Website</title>
+</head>
+<body>
+  <div class="page">
+    <!-- Top navigation -->
+    <header>
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="#" class="logo-link navbar-brand">
+            <img src="img/mylogo_dark_cn.svg" alt="my_logo" class="logo-img img-dark">
+          </a>
+          <div class="nav-links">
+            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="nav-actions">
+          <button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+            <span class="icon" aria-hidden="true">🌙</span>
+            <span class="label">Dark</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero section -->
+      <section class="hero">
+        <div class="hero-aside">
+          <aside class="profile-card" aria-label="Profile summary">
+            <div class="profile-photo">
+              <img src="img/avatar_square.png" alt="avatar">
+            </div>
+            <div class="profile-name">Yi Cai &nbsp; 蔡逸</div>
+            <div class="profile-role"> M.Sc. in Computer Science </div>
+            <div class="profile-links">
+              <a href="https://scholar.google.com/citations?user=Elyt1pkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
+              <a href="https://github.com/caiy0220" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.linkedin.com/in/yi-cai-8bb351179/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+          </aside>
+        </div>
+
+        <div class="hero-card">
+          <div class="hero-inner">
+            <p class="hero-summary">
+              I am currently a PhD candidate in the <a href="https://www.mi.fu-berlin.de/en/inf/groups/ag-comm/index.html">Cybersecurity and AI</a> working group at <a href="https://www.fu-berlin.de/">Freie Universität Berlin</a> under the supervision of Prof. Gerhard Wunder. 
+              My research centers on responsible AI, with a particular emphasis on <strong>explainability</strong>, fairness, and robustness of machine learning and AI systems. 
+            </p>
+              <!-- <br><br> -->
+            <p class="hero-summary">
+              Building on several published works in feature attribution, I'm now actively seeking to extend my research to broader forms of explanations and investigate their utility, including higher-order feature interactions, data attribution, and their practical impacts in model training & debugging.
+            </p>
+            <div class="hero-tags">
+              <span class="hero-tag">Explainable AI</span>
+              <span class="hero-tag">Feature Attribution</span>
+              <span class="hero-tag">LLMs</span>
+            </div>
+            <div class="hero-actions">
+              <a class="btn-primary" href="files/Caiy_CV.pdf" target="_blank" rel="noopener">
+                Download CV
+              </a>
+              <a class="btn-ghost" href="#research">
+                View publications
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section id="experience">
+        <div class="section-header">
+          <h2 class="section-title">Experience</h2>
+          <div class="section-subtitle">
+            Academic roles
+          </div>
+        </div>
+
+        <div class="section-body">
+          <div class="timeline">
+            <!-- Current role -->
+            <article class="timeline-item timeline-item-current">
+              <div class="timeline-meta">
+                <div class="timeline-logo-cell">
+                  <img src="img/Logo_FUB.png" alt="FUB Logo" class="timeline-logo">
+                </div>
+                <div class="timeline-text-cell">
+                  <div class="timeline-role">PhD Student, Research Assistant in Explainable AI</div>
+                  <div class="timeline-place">Freie Universität Berlin · Berlin, Germany</div>
+                  <div class="timeline-date">2022&nbsp;–&nbsp;Present</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Previous role 1 -->
+            <article class="timeline-item">
+              <div class="timeline-meta">
+                <div class="timeline-logo-cell">
+                  <img src="img/Logo_LUH.png" alt="LUH Logo" class="timeline-logo">
+                </div>
+                <div class="timeline-text-cell">
+                  <div class="timeline-role">Research Assistant in Explainable AI</div>
+                  <div class="timeline-place">Leibniz Universität Hannover · Hannover, Germany</div>
+                  <div class="timeline-date">2020&nbsp;–&nbsp;2022</div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Previous role 2 -->
+            <article class="timeline-item">
+              <div class="timeline-meta">
+                <div class="timeline-logo-cell">
+                  <img src="img/Logo_LUH.png" alt="LUH Logo" class="timeline-logo">
+                </div>
+                <div class="timeline-text-cell">
+                  <div class="timeline-role">Student Research Assistant in Semi-supervised Machine Learning</div>
+                  <div class="timeline-place">Leibniz Universität Hannover · Hannover, Germany</div>
+                  <div class="timeline-date">2017&nbsp;–&nbsp;2018</div>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Research & Publications -->
+      <section id="research">
+        <div class="section-header">
+          <h2 class="section-title">Research &amp; Publications</h2>
+          <div class="section-subtitle">
+            Selected work
+          </div>
+        </div>
+        <div class="section-body">
+          <!-- Paper 1 -->
+          <article class="paper-entry two-column">
+            <!-- Paper info -->
+            <div class="paper-main">
+              <div class="item-title"> Rethinking Explanation Evaluation under the Retraining Scheme </div>
+              <div class="item-meta">Accepted at AAAI'26</div>
+              <p class="item-desc">
+                Revisits widely-used retraining-based evaluation for feature attribution,
+                demonstrates its pitfalls, and proposes alternative efficient, distortion-free schemes
+                for assessing explanation quality.
+              </p>
+              <div class="paper-links">
+                <a href="https://arxiv.org/pdf/2511.08281" target="_blank" rel="noopener">Preprint</a>
+                <a href="https://github.com/caiy0220/KAFT-C" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+
+            <a class="paper-screenshot" href="https://arxiv.org/pdf/2511.08281" target="_blank" rel="noopener">
+              <img src="img/papers/kaft-c-example.png" alt="KAFT preview">
+            </a>
+          </article>
+
+          <!-- Paper 2 -->
+          <article class="paper-entry two-column">
+            <!-- Paper info -->
+            <div class="paper-main">
+              <div class="item-title"> GEFA: A General Feature Attribution Framework Using Proxy Gradient Estimation </div>
+              <div class="item-meta"> ICML'25 </div>
+              <p class="item-desc">
+                Derives a feature attribution framework based on proxy gradient estimation.
+                The proposed method provides an unbiased estimation of Shapley values, 
+                which is generally applicable to different model architectures and data modalities. 
+              </p>
+              <div class="paper-links">
+                <a href="https://proceedings.mlr.press/v267/cai25a.html" target="_blank" rel="noopener">Paper</a>
+                <a href="https://github.com/caiy0220/GEFA" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+
+            <a class="paper-screenshot" href="https://proceedings.mlr.press/v267/cai25a.html" target="_blank" rel="noopener">
+              <img src="img/papers/gefa-example.png" alt="KAFT preview">
+            </a>
+          </article>
+
+          <!-- Paper 3 -->
+          <article class="paper-entry two-column">
+            <!-- Paper info -->
+            <div class="paper-main">
+              <div class="item-title"> On Gradient-like Explanation under a Black-box Setting </div>
+              <div class="item-meta"> ICML'24 </div>
+              <p class="item-desc">
+                Explores the possibility of delivering gradient-like attributions with only query-level access.
+                The resulting preserves a set of promising axioms of the white-box approaches and 
+                demonstrates competitive performance in the empirical experiments
+              </p>
+              <div class="paper-links">
+                <a href="https://arxiv.org/abs/2308.09381" target="_blank" rel="noopener">Preprint</a>
+                <a href="https://proceedings.mlr.press/v235/cai24h.html" target="_blank" rel="noopener">Paper</a>
+                <a href="https://github.com/caiy0220/GEEX" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+
+            <a class="paper-screenshot" href="https://proceedings.mlr.press/v235/cai24h.html" target="_blank" rel="noopener">
+              <img src="img/papers/geex-example.png" alt="KAFT preview">
+            </a>
+          </article>
+
+          <div class="section-note">
+            For a full list of publications, please visit my
+            <a href="https://scholar.google.com/citations?user=Elyt1pkAAAAJ&hl=en" target="_blank">Google Scholar profile</a>.
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="section-header">
+          <h2 class="section-title">Projects</h2>
+          <div class="section-subtitle">
+            The projects that fund(ed) my research
+          </div>
+        </div>
+        <div class="section-body">
+          <article class="project-row">
+            <div class="project-item">
+              <div class="item-title">Opportunities and risks of generative AI in cybersecurity (AIgenCY)</div>
+              <div class="item-meta"> 2024&nbsp;-&nbsp;Present </div>
+              <p class="item-desc">
+                AIgenCY shall explore fundamental research on existing and forthcoming threats for and through generative AI, 
+                particularly large language models and foundation models.
+                At the same time, suitable measures are to be developed to improve the detection of and defence against such cyber attacks.
+              </p>
+              <div class="paper-links">
+                <a href="https://www.mi.fu-berlin.de/en/inf/groups/ag-comm/projects/current-projects/Opportunities-and-Risks-of-Generative-AI-in-Cybersecurity/index.html" target="_blank" rel="noopener">Link</a>
+                <a href="https://www.forschung-it-sicherheit-kommunikationssysteme.de/projekte/aigency" target="_blank" rel="noopener">Project Page (DE)</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-row">
+            <div class="project-item">
+              <div class="item-title">Center for Trustworthy AI (ZVKI)</div>
+              <div class="item-meta"> 2022&nbsp;-&nbsp;2024 </div>
+              <p class="item-desc">
+                The independent think tank iRights.Lab founded the centre in partnership with 
+                the institutes Fraunhofer AISEC and IAIS as well as the Freie Universität Berlin.
+                As a forum for debate in Germany, the CTAI makes the developments surrounding 
+                societal questions about artificial intelligence and algorithmic systems tangible.
+              </p>
+              <div class="paper-links">
+                <a href="https://www.zvki.de/en" target="_blank" rel="noopener">Link</a>
+              </div>
+            </div>
+            <a href="https://www.zvki.de/en" target="_blank" rel="noopener">
+              <img src="img/ZVKI.svg" alt="zvki logo" class="project-row-logo logo-auto" >
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-item">
+              <div class="item-title">Responsible Artificial Intelligence</div>
+              <div class="item-meta"> 2020&nbsp;-&nbsp;2022 </div>
+              <p class="item-desc">
+                Artificial intelligence (AI) technologies are the driving force behind digitization. 
+                Due to their enormous social relevance, a responsible use of AI is of particular importance. 
+                The research and application of responsible AI is a very young discipline and requires the 
+                bundling of research activities from different disciplines in order to design and apply AI systems
+                in a reliable, transparent, secure and legally acceptable way.
+              </p>
+              <div class="paper-links">
+                <a href="https://verantwortungsvolleki.de/en/" target="_blank" rel="noopener">Link</a>
+              </div>
+            </div>
+            <a href="https://verantwortungsvolleki.de/en/" target="_blank" rel="noopener">
+              <img src="img/VKI.png" alt="vki logo" class="project-row-logo" >
+            </a>
+          </article>
+
+          <article class="project-row">
+            <div class="project-item">
+              <div class="item-title">KISWIND</div>
+              <div class="item-meta"> 2021&nbsp;-&nbsp;2022 </div>
+              <p class="item-desc">
+                The demand for automated damage detection in the field of civil infrastructures is high, for economic and safety reasons. 
+                This collaborative research project aims to contribute to a further development of automated damage 
+                detection in wind energy turbines based on acoustic emission testing (AET) and machine learning.
+              </p>
+              <div class="paper-links">
+                <a href="https://www.mi.fu-berlin.de/en/inf/groups/ag-KIML/Projects/KISWIND/index.html" target="_blank" rel="noopener">Link</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <div class="section-subtitle">
+            Reach out for collaborations, talks, or questions
+          </div>
+        </div>
+        <div class="section-body">
+          <div class="contact-list">
+            <div class="contact-item">
+              <span class="contact-item-label">Email:</span>
+              <a href="mailto:yi.cai@fu-berlin.de">yi.cai@fu-berlin.de</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">GitHub:</span>
+              <a href="https://github.com/caiy0220" target="_blank" rel="noopener">github.com/caiy0220</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">Scholar:</span>
+              <a href="https://scholar.google.com/citations?user=Elyt1pkAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar profile</a>
+            </div>
+            <div class="contact-item">
+              <span class="contact-item-label">LinkedIn:</span>
+              <a href="https://www.linkedin.com/in/yi-cai-8bb351179/" target="_blank" rel="noopener">LinkedIn profile</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Yi Cai</div>
+      <div>Built with the help of ChatGPT.</div>
+    </footer>
+  </div>
+</body>
+</html>
