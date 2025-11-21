@@ -644,12 +644,14 @@ section + section {
 /* Links under each paper */
 .paper-links {
   display: flex;
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.9rem;
 }
 
-.paper-links a {
+.paper-links a, 
+.paper-links button {
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--border) 50%); 
@@ -657,7 +659,8 @@ section + section {
   color: var(--accent);
 }
 
-.paper-links a:hover {
+.paper-links a:hover,
+.paper-links button:hover {
   color: var(--accent);
   background-color: var(--accent-soft);
 }
@@ -795,4 +798,82 @@ html[data-theme="light"] .logo-auto {
 /* Dark mode: invert and slightly tweak brightness/contrast */
 html[data-theme="dark"] .logo-auto {
   filter: invert(1) brightness(1.05) contrast(1.05);
+}
+
+/* === Citation modal === */
+
+.citation-modal {
+  position: fixed;
+  inset: 0;
+  display: none;                 /* hidden by default */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.citation-modal.is-open {
+  display: flex;                 /* show when active */
+}
+
+.citation-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.citation-dialog {
+  position: relative;
+  max-width: 640px;
+  width: 90%;
+  max-height: 70vh;
+  background: var(--bg-alt);
+  border-radius: 0.9rem;
+  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  padding: 1rem 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  overflow: hidden;
+}
+
+.citation-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.7rem;
+  border: none;
+  background: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.citation-close:hover {
+  color: var(--accent);
+}
+
+.citation-btn {
+  margin-right: auto;
+}
+
+#citation-title {
+  font-size: 0.98rem;
+  margin: 0 2rem 0.2rem 0;
+}
+
+#citation-content {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+
+  white-space: pre-wrap;     /* wrap long lines */
+  overflow: auto;
+
+  /* ▼ Rounded highlight box */
+  border-radius: 0.9rem;
+  border: 2px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--accent-soft) 90%, var(--bg-alt) 10%);
+  box-shadow: var(--shadow-soft);
 }

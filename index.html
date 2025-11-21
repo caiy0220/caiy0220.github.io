@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="styles.css">
 
   <!-- Theme & small JS logic -->
-  <script src="theme.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/citations.js" defer></script>
 
   <!-- Tab info -->
   <link rel="icon" type="image/svg" href="img/mylogo_light.svg">
@@ -165,6 +166,9 @@
                 for assessing explanation quality.
               </p>
               <div class="paper-links">
+                <button type="button" class="btn-ghost citation-btn" data-cite-src="citations/kaft.bib">
+                  Cite
+                </button>
                 <a href="https://arxiv.org/pdf/2511.08281" target="_blank" rel="noopener">Preprint</a>
                 <a href="https://github.com/caiy0220/KAFT-C" target="_blank" rel="noopener">Code</a>
               </div>
@@ -187,6 +191,9 @@
                 which is generally applicable to different model architectures and data modalities. 
               </p>
               <div class="paper-links">
+                <button type="button" class="btn-ghost citation-btn" data-cite-src="citations/gefa.bib">
+                  Cite
+                </button>
                 <a href="https://proceedings.mlr.press/v267/cai25a.html" target="_blank" rel="noopener">Paper</a>
                 <a href="https://github.com/caiy0220/GEFA" target="_blank" rel="noopener">Code</a>
               </div>
@@ -209,6 +216,9 @@
                 demonstrates competitive performance in the empirical experiments
               </p>
               <div class="paper-links">
+                <button type="button" class="btn-ghost citation-btn" data-cite-src="citations/geex.bib">
+                  Cite
+                </button>
                 <a href="https://arxiv.org/abs/2308.09381" target="_blank" rel="noopener">Preprint</a>
                 <a href="https://proceedings.mlr.press/v235/cai24h.html" target="_blank" rel="noopener">Paper</a>
                 <a href="https://github.com/caiy0220/GEEX" target="_blank" rel="noopener">Code</a>
@@ -344,6 +354,17 @@
       <div>© <span id="year"></span> Yi Cai</div>
       <div>Built with the help of ChatGPT.</div>
     </footer>
+  </div>
+
+  <!-- Citation modal (hidden by default) -->
+  <div id="citation-modal" class="citation-modal" aria-hidden="true">
+    <div class="citation-backdrop"></div>
+
+    <div class="citation-dialog" role="dialog" aria-modal="true" aria-labelledby="citation-title">
+      <button class="citation-close" aria-label="Close citation">&times;</button>
+      <h3 id="citation-title">Citation</h3>
+      <pre id="citation-content"></pre>
+    </div>
   </div>
 </body>
 </html>
