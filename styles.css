@@ -644,7 +644,7 @@ section + section {
 /* Links under each paper */
 .paper-links {
   display: flex;
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.9rem;
@@ -852,9 +852,9 @@ html[data-theme="dark"] .logo-auto {
   color: var(--accent);
 }
 
-.citation-btn {
+/* .citation-btn {
   margin-right: auto;
-}
+} */
 
 #citation-title {
   font-size: 0.98rem;
