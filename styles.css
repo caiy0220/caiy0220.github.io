@@ -644,13 +644,14 @@ section + section {
 /* Links under each paper */
 .paper-links {
   display: flex;
-  /* justify-content: flex-end; */
+  justify-content: flex-end;
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: 0.9rem;
 }
 
-.paper-links a, 
+/* Definition shared with project-links */
+/* .paper-links a, 
 .paper-links button {
   padding: 0.25rem 0.7rem;
   border-radius: 999px;
@@ -663,7 +664,7 @@ section + section {
 .paper-links button:hover {
   color: var(--accent);
   background-color: var(--accent-soft);
-}
+} */
 
 .paper-screenshot {
   border-radius: 0.9rem;
@@ -719,6 +720,28 @@ section + section {
 
 .project-row:not(:has(.project-row-logo)) .project-item {
   grid-column: 1 / -1;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.paper-links a, .project-links a, 
+.paper-links button {
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, var(--border) 50%); 
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.paper-links a:hover, .project-links button:hover,
+.paper-links a:hover {
+  color: var(--accent);
+  background-color: var(--accent-soft);
 }
 
 /* Contact */
@@ -852,9 +875,9 @@ html[data-theme="dark"] .logo-auto {
   color: var(--accent);
 }
 
-/* .citation-btn {
+.citation-btn {
   margin-right: auto;
-} */
+}
 
 #citation-title {
   font-size: 0.98rem;
