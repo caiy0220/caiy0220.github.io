@@ -900,3 +900,15 @@ html[data-theme="dark"] .logo-auto {
   background: color-mix(in srgb, var(--accent-soft) 90%, var(--bg-alt) 10%);
   box-shadow: var(--shadow-soft);
 }
+
+.visitor-map-body {
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
+
+.visitor-map iframe,
+.visitor-map img,
+.visitor-map canvas {
+  max-width: 100%;
+}
