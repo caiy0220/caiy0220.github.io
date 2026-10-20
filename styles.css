@@ -650,6 +650,12 @@ section + section {
   font-size: 0.9rem;
 }
 
+.paper-links .coming-soon {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
 /* Definition shared with project-links */
 /* .paper-links a, 
 .paper-links button {
@@ -681,6 +687,25 @@ section + section {
   height: auto;
   display: block;
   border-radius: 0.5rem;
+}
+
+/* Functionality to incorporate gifs (for GEFI) */
+.paper-screenshots {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper-screenshots .paper-screenshot {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.paper-screenshots .paper-screenshot img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 /* Projects */

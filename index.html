@@ -116,7 +116,7 @@
               </div>
             </article>
 
-            <article class="timeline-item timeline-item-current">
+            <article class="timeline-item">
               <div class="timeline-meta">
                 <div class="timeline-logo-cell">
                   <img src="img/Logo_FUB.png" alt="FUB Logo" class="timeline-logo">
@@ -170,12 +170,41 @@
           </div>
         </div>
         <div class="section-body">
+          <article class="paper-entry two-column">
+            <!-- Paper info -->
+            <div class="paper-main">
+              <div class="item-title"> Explaining Cross-Modal Model Behavior with Gradient-Estimation-Based Feature Interaction </div>
+              <div class="item-meta">Accepted at NeurIPS'26</div>
+              <p class="item-desc">
+                Extends proxy gradient estimation (previously introduced in GEFA @ICML'25) to investigate higher-order feature interactions.
+                The proposed framework establishes theoretical equivalence to the Shapley Interaction Index and
+                enables efficient, pixel-level interaction estimation, providing fine-grained insights into cross-modal concept alignemnt.
+              </p>
+              <div class="paper-links">
+                <!-- <button type="button" class="btn-ghost citation-btn" data-cite-src="citations/kaft.bib">
+                  Cite
+                </button> -->
+                <!-- <a href="https://arxiv.org/pdf/2511.08281" target="_blank" rel="noopener">Preprint</a> -->
+                <a href="https://github.com/caiy0220/GEFI" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+
+            <div class="paper-screenshots">
+              <a class="paper-screenshot" href="https://github.com/caiy0220/GEFI" target="_blank" rel="noopener">
+                <img src="img/papers/gefi-img2txt.gif" alt="GEFI example image to text">
+              </a>
+              <a class="paper-screenshot" href="https://github.com/caiy0220/GEFI" target="_blank" rel="noopener">
+                <img src="img/papers/gefi-txt2img.gif" alt="GEFI example text to image">
+              </a>
+            </div>
+          </article>
+
           <!-- Paper 1 -->
           <article class="paper-entry two-column">
             <!-- Paper info -->
             <div class="paper-main">
               <div class="item-title"> Rethinking Explanation Evaluation under the Retraining Scheme </div>
-              <div class="item-meta">Accepted at AAAI'26</div>
+              <div class="item-meta">AAAI'26</div>
               <p class="item-desc">
                 Revisits widely-used retraining-based evaluation for feature attribution,
                 demonstrates its pitfalls, and proposes alternative efficient, distortion-free schemes
